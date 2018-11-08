@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>梦想第一站</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link th:href = "@{css/bootstrap.min.css}" rel="stylesheet"/>
+    <link th:href = "@{css/fileinput.min.css}" rel="stylesheet"/>
+    <script th:src = "@{js/jquery-3.3.1.min.js}" ></script>
+    <script th:src = "@{js/bootstrap.min.js}" ></script>
+    <script th:src = "@{js/fileinput.js}" ></script>
+    <script th:src = "@{js/locales/zh.js}" ></script>
+</head>
+<body>
+<div class="container">
+    <p> </p>
+    <p> </p>
+    <h2 class="text-info text-center">你好，豆豆</h2>
+    <div id="accordion">
+        <div class="card">
+            <div class="card-header">
+                <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                    我在想啥
+                </a>
+            </div>
+            <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                <div class="card-body">
+                    何银亮，我讨厌你！！！
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+                    为什么
+                </a>
+            </div>
+            <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                <div class="card-body">
+                    我心里全是你，而你总是忽视我
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+                    总结一下
+                </a>
+            </div>
+            <div id="collapseThree" class="collapse" data-parent="#accordion">
+                <div class="card-body">
+                    因爱生恨！！！
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script th:src = "@{js/service/mine-upload.js}" ></script>
+</body>
+</html>
