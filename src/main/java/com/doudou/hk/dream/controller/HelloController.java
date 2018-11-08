@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HelloController {
 
     @RequestMapping("/")
-    public String hello(Model model)
+    public String index(Model model)
     {
         return "index";
     }
