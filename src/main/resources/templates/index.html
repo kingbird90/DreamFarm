@@ -10,47 +10,52 @@
     <script th:src = "@{js/bootstrap.min.js}" ></script>
     <script th:src = "@{js/fileinput.js}" ></script>
     <script th:src = "@{js/locales/zh.js}" ></script>
+    <style>
+  .carousel-inner img {
+      width: 100%;
+      height: 50%;
+  }
+  </style>
 </head>
 <body>
 <div class="container">
-    <p> </p>
-    <p> </p>
+    <p id="time"> </p>
+    <p th:text="'这是本站被第'+${count} +'次访问'"> </p>
     <h2 class="text-info text-center">你好，豆豆</h2>
     <div id="accordion">
         <div class="card">
             <div class="card-header">
                 <a class="card-link" data-toggle="collapse" href="#collapseOne">
-                    我在想啥
+                    没啥可说
                 </a>
             </div>
             <div id="collapseOne" class="collapse" data-parent="#accordion">
                 <div class="card-body">
-                    何银亮，虽然你总甩开我去浪，我也不会讨厌你！！！
+                    就是爱你
                 </div>
             </div>
         </div>
         <div class="card">
             <div class="card-header">
                 <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
-                    为什么
+                    不要瘪嘴
                 </a>
             </div>
             <div id="collapseTwo" class="collapse" data-parent="#accordion">
                 <div class="card-body">
-                    我心里全是你，就算你老是忽视我，我还是喜欢你
-					你不听我也要讲，男人都是大猪蹄子我不知道，但我不是呀！！！
+                    显得不美
                 </div>
             </div>
         </div>
         <div class="card">
             <div class="card-header">
                 <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
-                    总结一下
+                    不准拒绝
                 </a>
             </div>
             <div id="collapseThree" class="collapse" data-parent="#accordion">
                 <div class="card-body">
-                    我爱你只是遵从了我的内心，绝不后悔，绝不退缩
+                    拒绝你的拒绝
                 </div>
             </div>
         </div>
@@ -71,11 +76,49 @@
             <p>我的宣言是：  豆豆，我希望一直能在你身边！！！</p>
         </div>
     </div>
+    <div id="demo" class="carousel slide" data-ride="carousel">
+        <!-- 指示符 -->
+        <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+
+        <!-- 轮播图片 -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img th:src="@{/img/shot01.jpg}"/>
+            </div>
+            <div class="carousel-item">
+                <img th:src="@{/img/shot02.jpg}"/>
+            </div>
+            <div class="carousel-item">
+                <img th:src="@{/img/shot03.jpg}"/>
+            </div>
+        </div>
+
+        <!-- 左右切换按钮 -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
     <div class="media">
-        <audio class="media-body" controls="controls" autoplay="autoplay" th:src="@{/music/cal.mp3}" style="width:200px" />
+        <audio class="media-body" controls="controls" autoplay="autoplay" th:src="@{/music/yihan.mp3}" style="width:200px" />
     </div>
 
 </div>
+<script>
+	var startTime = new Date();
+
+    function mytime(){
+        var a = new Date();
+		var count = (a.getTime()-startTime.getTime())/1000;
+        document.getElementById("time").innerHTML = "你已停留： "+count.toFixed(0) +"  秒";}
+    setInterval(function() {mytime()},1000);
+</script>
 <script th:src = "@{js/service/mine-upload.js}" ></script>
 </body>
 </html>
